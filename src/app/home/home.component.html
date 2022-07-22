@@ -1,0 +1,11 @@
+<h1>My Blogs!</h1>
+<div class="big-box">
+    <div *ngFor="let user of userBlog">
+        <a [routerLink]="['/view-blog',user.userID]">
+            <div class="child">
+                <h3 style="color: black;">{{user.userTitle}}</h3>
+                <br>{{user.userDescription}} 
+            </div>
+        </a>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<h1>Create New Blog</h1>
+
+<div class="main">
+    <form #localForm="ngForm">
+        <div>
+            <div class="content-1">
+                <div class="title-1">Title*</div>
+                <div>
+                    <input type="text" required #name="ngModel"
+                     class="input" placeholder="title" [(ngModel)]="userContent.userTitle" name="userTitle">
+                     <br> <span *ngIf="name.invalid && name.touched">Required</span>
+                </div>
+            </div>
+
+            <div class="content-2">
+                <div class="title-2">Description*</div>
+                <div>
+                    <textarea type="text" class="des" rows="4" cols="50" required #description="ngModel" minlength="150" [(ngModel)]="userContent.userDescription" name="userDescription"></textarea>
+                    <br> <span *ngIf="description.invalid && description.touched">Minimum 150 characters required</span>                
+                </div>
+            </div>
+        </div>
+
+        <div class="btn">
+            <button type="button" (click)="postBlog()">Post</button>
+            <button type="button" (click)="cancel()">Cancel</button>
+        </div>
+    </form>
+</div>
